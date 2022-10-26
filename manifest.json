@@ -1,19 +1,26 @@
 {
   "manifest_version": 2,
-  "name": "tagger",
+  "name": "taggart",
   "version": "0.0.1",
 
   "description": "Save and tag the current tab.",
   "homepage_url": "https://github.com/jonasmerlin/tagger",
   "icons": {
-    "48": "icons/tagger-48.png"
+    "48": "icons/taggart-48.png"
   },
 
   "permissions": ["activeTab"],
 
   "browser_action": {
-    "default_icon": "icons/tagger-32.png",
-    "default_title": "tagger",
+    "default_icon": "icons/taggart-32.png",
+    "default_title": "taggart",
     "default_popup": "popup/tag.html"
-  }
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["tag.js"]
+    }
+  ]
 }
